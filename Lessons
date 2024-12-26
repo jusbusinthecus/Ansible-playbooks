@@ -1,0 +1,15 @@
+# understanding Ansible Dictionary values aka Dictionary variables.
+class: RH294  # key value pair
+title: RH Linux Automation with Ansible # key value pair
+
+instructor_info: # is a dictionary, it holds no value like "class" and "title"
+  name: Justin Turner
+  email_address: giovanni1justin@gmail.com
+  current_locale: Upper Marlboro, MD
+  favorite_fruit:
+
+    summer_fruit:
+       - mango
+       - banana
+       - canteloupe
+    
