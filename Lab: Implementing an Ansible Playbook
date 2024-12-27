@@ -37,8 +37,13 @@
        state: started
        enabled: yes
 
-- name: Copy index.php to /var/www/html
-  ansible.builtin.copy:
-    src: /home/student/playbook-review/index.php
-    dest: /var/www/html/
-    mode: 0644
+   - name: Copy index.php to /var/www/html
+     ansible.builtin.copy:
+       src: /home/student/playbook-review/index.php
+       dest: /var/www/html/
+       mode: 0644
+
+- name: Ensure web access on serverb
+  ansible.builtin.uri:
+    url: serverb.lab.example.com
+    return_content: true
