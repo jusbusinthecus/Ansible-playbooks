@@ -37,3 +37,8 @@
        state: started
        enabled: yes
 
+- name: Copy index.php to /var/www/html
+  ansible.builtin.copy:
+    src: /home/student/playbook-review/index.php
+    dest: /var/www/html/
+    mode: 0644
