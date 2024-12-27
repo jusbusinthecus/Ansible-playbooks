@@ -6,17 +6,25 @@
 
   tasks:
 
-  name: install latest of firewalld, httpd, mariadb-server, php, and php-mqslnd
-  ansible.builtin.dnf:
-    name: - firewalld
-          - httpd
-          - mariadb-server
-          - php
-          - php-msqlnd
-    state: latest
+   - name: install latest of firewalld, httpd, mariadb-server, php, and php-mqslnd
+     ansible.builtin.dnf:
+       name: 
+             - firewalld
+             - httpd
+             - mariadb-server
+             - php
+             - php-msqlnd
+       state: latest
 
-  name: Ensure firewalld is enabled and running
-  ansible.builtin.service
-    name: firewalld
-    state: running
-    enabled: yes
+   - name: Ensure firewalld is enabled and running
+     ansible.builtin.service:
+       name: firewalld
+       state: started
+       enabled: yes
+
+   - name: Ensure access to http is allowed
+     ansible.posix.firewalld:
+       service: http
+       state: enabled
+       permanent: true
+       immediate: true
