@@ -1,1 +1,9 @@
+---
 
+- name: Enable internet services
+  hosts: serverb.lab.example.com
+  become: true
+
+  tasks:
+
+  
