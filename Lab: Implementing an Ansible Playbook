@@ -43,13 +43,18 @@
        dest: /var/www/html/
        mode: 0644
 
-- name: Test connectivity
-  
+- name: Test connectivity on workstation
+  ansible.builtin.ping:
+  hosts: workstation.lab.example.com
+  become: false
+
   tasks:
 
   - name: Ensure web access on serverb
-    ansible.builtin.ping:
+    ansible.builtin.uri:
+      url: http://serverb.lab.example.com
+      status_code: 200
 
-  - name: test web ser
+  
 
 
