@@ -6,4 +6,11 @@
 
   tasks:
 
-  
+  name: install latest of firewalld, httpd, mariadb-server, php, and php-mqslnd
+  ansible.builtin.dnf:
+    name: - firewalld
+          - httpd
+          - mariadb-server
+          - php
+          - php-msqlnd
+    state: latest
