@@ -14,3 +14,9 @@
           - php
           - php-msqlnd
     state: latest
+
+  name: Ensure firewalld is enabled and running
+  ansible.builtin.service
+    name: firewalld
+    state: running
+    enabled: yes
