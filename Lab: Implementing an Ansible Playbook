@@ -43,7 +43,13 @@
        dest: /var/www/html/
        mode: 0644
 
-- name: Ensure web access on serverb
-  ansible.builtin.uri:
-    url: serverb.lab.example.com
-    return_content: true
+- name: Test connectivity
+  
+  tasks:
+
+  - name: Ensure web access on serverb
+    ansible.builtin.ping:
+
+  - name: test web ser
+
+
