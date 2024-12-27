@@ -28,3 +28,12 @@
        state: enabled
        permanent: true
        immediate: true
+
+   - name: Ensure httpd and mariadb services are enabled and running
+     ansible.builtin.services:
+       name: 
+             - httpd
+             - mariadb-server
+       state: started
+       enabled: yes
+
