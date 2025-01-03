@@ -22,7 +22,7 @@ install
 lang en_US.UTF-8
 keyboard us
 network --bootproto=dhcperver= --hostname=ansible-master
-rootpw --iscrypted $6$randomSalt$hashedPasswordHere # to create a hashed password run this on a rhel command "openssl passwd -6 your_password_here" and add to this line.
+rootpw --plaintext your_password_here
 timezone America/New_York --isUtc
 user --name=ansible_master --password=your_hashed_password_here --gecos="Ansible Master" --groups=wheel
 
@@ -34,7 +34,7 @@ services --enabled="sshd"
 
 # Package selection
 %packages
-@^minimal
+@^server-with-guil
 @^development
 @^server
 ansible
@@ -72,13 +72,10 @@ services --enabled="sshd"
 
 # Package selection
 %packages
-@^minimal
+@^server-with-gui
 @^development
 @^server
-ansible
 git
-python3
-python3-pip
 %end
 
 # Post-installation script
