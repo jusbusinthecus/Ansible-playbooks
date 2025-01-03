@@ -7,7 +7,7 @@ Setting up home lab
 install
 lang en_US.UTF-8
 keyboard us
-network --bootproto=static --ip=19 --netmask=255.255.255.0 --gateway=192.168.1.1 --nameserver=8.8.8.8 --hostname=ansible-server.yourdomain.com
+network --bootproto=dhcperver= --hostname=ansible-server
 rootpw --iscrypted $6$randomSalt$hashedPasswordHere
 timezone America/New_York --isUtc
 user --name=ansible_user --password=your_hashed_password_here --gecos="Ansible User" --groups=wheel
