@@ -1,3 +1,11 @@
 ################ Installing Ansible #################
 
+At home add a second disk with RHEL iso attached
+
+make a directory
+- # mkdir -pv /mnt/rheliso
+
+mount the directory or mount it permanently, that'll be done later
+- # mount /dev/<device> /mnt/rheliso
+
 
